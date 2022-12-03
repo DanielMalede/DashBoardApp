@@ -20,37 +20,37 @@ ChartJS.register(
   Legend
 );
 
-export const options = {
-  responsive: true,
-  plugins: {
-    legend: {
-      position: 'top',
-    },
-    title: {
-      display: true,
-      text: 'Chart.js Bar Chart',
-    },
-  },
-};
 
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-
-export const data = {
-  labels,
-  datasets: [
-    {
-      label: 'Dataset 1',
-      data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+export default function BarChart({item}) {
+  item.map(item=>{
+    console.log(item);
+  })
+    
+  
+  const options = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+      title: {
+        display: true,
+        text: 'Chart.js Bar Chart',
+      },
     },
-    // {
-    //   label: 'Dataset 2',
-    //   data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-    //   backgroundColor: 'rgba(53, 162, 235, 0.5)',
-    // },
-  ],
-};
-
-export default function BarChart() {
-  return <Bar options={options} data={data} />;
+  };
+  
+  const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+  
+  const data = {
+    labels,
+    datasets: [
+      {
+        label: 'Dataset 2',
+        data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+        backgroundColor: 'rgba(53, 162, 235, 0.5)',
+      }
+    ]
+  };
+  return <Bar width={400} options={options} data={data} />;
 }

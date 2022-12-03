@@ -1,57 +1,57 @@
-const productsModel = require("../model/products-model");
+const infoPagesModel = require("../model/infoPages-model");
 
-const getProduct = async (req, res) => {
-  await productsModel.find({}).then((result, err) => {
+const getInfoPages = async (req, res) => {
+  await infoPagesModel.find({}).then((result, err) => {
     if (err) {
       return res.status(400).json({ success: false, message: err });
     }
     if (result.length == 0) {
       return res.json({ success: false, message: "no data" });
     }
-
+    if (result) {
       return res.status(200).json({ success: true, message: result });
-    
+    }
   });
 };
 
-const getProductsById = async (req, res) => {
-  await productsModel
+const geInfoPagesById = async (req, res) => {
+  await infoPagesModel
     .findById(req.params.id)
-    .then((productId) => {
-      if (productId) {
-        return res.status(200).json({ success: true, productId });
+    .then((InfoPagesId) => {
+      if (InfoPagesId) {
+        return res.status(200).json({ success: true, InfoPagesId });
       }
-      return res.json({ success: false, message: "product not found" });
+      return res.json({ success: false, message: "InfoPages not found" });
     })
     .catch((error) => res.status(400).json({ success: false, error }));
 };
 
-const createProduct = async (req, res) => {
-  await productsModel
+const createInfoPages = async (req, res) => {
+  await infoPagesModel
     .insertMany(req.body.data)
     .then(() =>
-      res.status(200).json({ success: true, message: "product added" })
+      res.status(200).json({ success: true, message: "InfoPages added" })
     )
     .catch((error) => res.status(400).json({ success: false, error }));
 };
 
-const updateProduct = async (req, res) => {
-  await productsModel
+const updateInfoPages = async (req, res) => {
+  await infoPagesModel
     .findByIdAndUpdate(req.params.id, req.body.data)
     .then((result) => res.status(200).json({ success: true, result }))
     .catch((err) => res.status(400).json({ success: false, message: err }));
 };
-const deleteProduct = async (req, res) => {
-  await productsModel
+const deleteInfoPages = async (req, res) => {
+  await infoPagesModel
     .findByIdAndDelete(req.params.id)
     .then(() => res.status(300).json({ success: true }))
     .catch((err) => res.status(400).json({ success: false, err }));
 };
 
 module.exports = {
-  getProduct,
-  getProductsById,
-  createProduct,
-  updateProduct,
-  deleteProduct
+  getInfoPages,
+  geInfoPagesById,
+  createInfoPages,
+  updateInfoPages,
+  deleteInfoPages,
 };

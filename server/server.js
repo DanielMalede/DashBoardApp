@@ -3,24 +3,30 @@ dotenv.config()
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const port = process.env.PORT;
+const port = 5000;
 require('./DB')
 const path = require('path');
 const passport = require('passport');
 require('./config/passport')(passport);
 
-// const usersRouter = require('./routes/users-router')
 const productRouter = require('./routes/product-router')
-const registersUsersRouter = require('./routes/registersUser-router')
+const categoryRouter = require('./routes/category-router')
+const infoPageRouter = require('./routes/infoPages-router')
+const classesRouter = require('./routes/classes-router')
+const ordersRouter = require('./routes/orders-router')
 
 app.use(passport.initialize())
 app.use(cors());
 app.use(express.json({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/users',registersUsersRouter)
+app.use('/category',categoryRouter)
 app.use('/products',productRouter)
-// app.use('/users',usersRouter)
+app.use('/infoPages',infoPageRouter)
+app.use('/classes',classesRouter)
+app.use('/orders',ordersRouter)
+
+
 app.get("/", (req, res) => {
   res.send("success");
 });
