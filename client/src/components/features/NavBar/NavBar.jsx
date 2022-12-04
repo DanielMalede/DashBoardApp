@@ -9,7 +9,7 @@ import {
 export default function App() {
   return (
     <>
-      <MDBNavbar className=' bg-black' >
+      <MDBNavbar className=' bg-local' >
         <MDBContainer>
           <MDBNavbarBrand href='#'>
             <img

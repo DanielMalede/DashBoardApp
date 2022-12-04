@@ -5,6 +5,9 @@ import DoughnutChart from "./DoughnutChart/DoughnutChart";
 import BarChart from "./BarChart/BarChart";
 import Card from "./Card/Card";
 import NavBar from "./NavBar/NavBar";
+import CardSum from "./cardSum/CardSum";
+import BigCard from "./BigCard/BigCard";
+import HorizontalBarChart from "./HorizontalBarChart/HorizontalBarChart";
 
 export {
     PieChart,
@@ -13,5 +16,8 @@ export {
     BarChart,
     DoughnutChart,
     Card,
-    NavBar
+    NavBar,
+    CardSum,
+    BigCard,
+    HorizontalBarChart
 }

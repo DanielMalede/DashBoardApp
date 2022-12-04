@@ -23,7 +23,6 @@ export const DataContextProvider = ({ children }) => {
     infoPagesData().then((res) => setInfoPages(res.message));
     classesData().then(res=>setClasses(res.message))
   }, []);
-  console.log();
   return (
     <dataContext.Provider
       value={{ category, products, orders, infoPages, classes }}

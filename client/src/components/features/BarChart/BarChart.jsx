@@ -9,8 +9,6 @@ import {
   Legend,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
-import {faker} from '@faker-js/faker';
-
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -22,11 +20,6 @@ ChartJS.register(
 
 
 export default function BarChart({item}) {
-  item.map(item=>{
-    console.log(item);
-  })
-    
-  
   const options = {
     responsive: true,
     plugins: {
@@ -35,22 +28,22 @@ export default function BarChart({item}) {
       },
       title: {
         display: true,
-        text: 'Chart.js Bar Chart',
+        text: 'Orders Per Day',
       },
     },
   };
   
-  const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+  const labels = ['Sunday ','Monday ', 'Tuesday ', 'Wednesday ', 'Thursday ', 'Friday ', 'Saturday '];
   
   const data = {
     labels,
     datasets: [
       {
-        label: 'Dataset 2',
-        data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+        label: 'Orders',
+        data: [...item.map(item=>item.order_per_day)],
         backgroundColor: 'rgba(53, 162, 235, 0.5)',
       }
     ]
   };
-  return <Bar width={400} options={options} data={data} />;
+  return <Bar options={options} data={data} />;
 }

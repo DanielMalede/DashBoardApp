@@ -1,5 +1,10 @@
 @media screen and (min-width: 600px) {
   .DoughnutChart {
-    width: 30vw;
+    width: 20vw;
+  }
+  .heightChart{
+    background-color: rgb(242, 248, 248);
+    margin-left: 45px;
+    padding: 10px;
   }
 }
