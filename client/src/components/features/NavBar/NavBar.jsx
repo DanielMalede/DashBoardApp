@@ -13,10 +13,11 @@ export default function App() {
         <MDBContainer>
           <MDBNavbarBrand href='#'>
             <img
-              src='https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.webp'
-              height='30'
+              src='/images/logo/logo.png'
+              height='70'
               alt=''
               loading='lazy'
+              className=' p-0'
             />
           </MDBNavbarBrand>
         </MDBContainer>

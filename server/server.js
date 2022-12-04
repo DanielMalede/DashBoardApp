@@ -14,12 +14,14 @@ const infoPageRouter = require('./routes/infoPages-router')
 const ordersRouter = require('./routes/orders-router')
 const financialSummaryRouter = require('./routes/financialSummaryModel-router')
 const usersRouter = require('./routes/users-router')
+const orderComingRouter =require('./routes/ordersComing-router')
 
 app.use(passport.initialize())
 app.use(cors());
 app.use(express.json({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
 
+app.use('/ordersComing',orderComingRouter)
 app.use('/users',usersRouter)
 app.use('/products',productRouter)
 app.use('/financialSummary',financialSummaryRouter)

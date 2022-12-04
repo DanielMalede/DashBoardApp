@@ -11,12 +11,13 @@ import {
   CardSum,
   BigCard,
   HorizontalBarChart,
-  Footer
+  Footer,
+  Table,
 } from "../../features/index";
 import { useDataContext } from "../../../context/dataContext";
 
 export default function Home() {
-  const { infoPages, products, orders, financialSummary, users } =
+  const { infoPages, products, orders, financialSummary, users, ordersComing } =
     useDataContext();
   return (
     <div>
@@ -25,16 +26,19 @@ export default function Home() {
         <MDBContainer fluid>
           <MDBRow className=" mt-5 mb-5 justify-content-end">
             <MDBCol className="heightChart col-md-4 text-end ">
+              <h2>Orders per day</h2>
               <div className="px-0">
                 <BarChart item={orders} />
               </div>
             </MDBCol>
             <MDBCol className="heightChart col-md-3 text-end justify-content-end">
+            <h2>Instruments quantity </h2>
               <div className="DoughnutChart">
                 <DoughnutChart item={products} />
               </div>
             </MDBCol>
             <MDBCol className="heightChart col-md-3 text-end justify-content-end mx-md-5">
+            <h2>Instruments sale amount </h2>
               <div className="DoughnutChart">
                 <PieChart item={products} info={infoPages} />
               </div>
@@ -74,8 +78,10 @@ export default function Home() {
             })}
           </MDBRow>
           <AreaChart className="mt-5" item={users} />
+          <h2 className="mt-5">Orders coming soon</h2>
+          <Table item={ordersComing} />
         </MDBContainer>
-        <Footer/>
+        <Footer />
       </>
     </div>
   );

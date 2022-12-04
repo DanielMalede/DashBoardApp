@@ -8,6 +8,7 @@ import CardSum from "./cardSum/CardSum";
 import BigCard from "./BigCard/BigCard";
 import HorizontalBarChart from "./HorizontalBarChart/HorizontalBarChart";
 import Footer from './footer/Footer'
+import Table from './table/Table'
 export {
     PieChart,
     AreaChart,
@@ -18,5 +19,6 @@ export {
     CardSum,
     BigCard,
     HorizontalBarChart,
-    Footer
+    Footer,
+    Table
 }

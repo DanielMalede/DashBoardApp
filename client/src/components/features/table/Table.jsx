@@ -1,35 +1,32 @@
-import React from 'react';
-import { MDBTable, MDBTableHead, MDBTableBody } from 'mdb-react-ui-kit';
+import React from "react";
+import { MDBTable, MDBTableHead, MDBTableBody } from "mdb-react-ui-kit";
 
-export default function App() {
+export default function Table({ item }) {
   return (
-    <MDBTable hover>
+    <MDBTable responsive bordered borderColor="primary" hover className=" mt-5">
       <MDBTableHead>
         <tr>
-          <th scope='col'>#</th>
-          <th scope='col'>First</th>
-          <th scope='col'>Last</th>
-          <th scope='col'>Handle</th>
+          <th scope="col">Order Number</th>
+          <th scope="col">Name</th>
+          <th scope="col">Address</th>
+          <th scope="col">Delivery time</th>
+          <th scope="col">Number of products</th>
+          <th scope="col">Total</th>
         </tr>
       </MDBTableHead>
       <MDBTableBody>
-        <tr>
-          <th scope='row'>1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <th scope='row'>2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope='row'>3</th>
-          <td colSpan={2}>Larry the Bird</td>
-          <td>@twitter</td>
-        </tr>
+        {item.map((data,i) => {
+          return (
+              <tr key={i}>
+                <td>{data.orderNumber}</td>
+                <td>{data.Name}</td>
+                <td>{data.Address}</td>
+                <td>{data.deliveryTime}</td>
+                <td>{data.numberOfProduct}</td>
+                <td>{data.total}</td>
+              </tr>
+          );
+        })}
       </MDBTableBody>
     </MDBTable>
   );

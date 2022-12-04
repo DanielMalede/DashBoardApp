@@ -48,7 +48,7 @@ export default function AreaChart({item}) {
         label: 'Added Users',
         data: [...item.map(item=>item.added_users)],
         borderColor: 'rgb(53, 162, 235)',
-        backgroundColor: 'rgba(53, 162, 235, 0.5)',
+        // backgroundColor: 'rgba(53, 162, 235, 0.5)',
       },
     ],
   };
