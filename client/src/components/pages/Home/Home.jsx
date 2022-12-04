@@ -17,7 +17,7 @@ import { useDataContext } from "../../../context/dataContext";
 
 const cardTitle = ["Orders", "Products", "Info Pages", "Classes", "Category"];
 export default function Home() {
-  const { infoPages, products, orders } = useDataContext();
+  const { infoPages, products, orders ,financialSummary} = useDataContext();
   return (
     <div>
       <NavBar />
@@ -56,7 +56,8 @@ export default function Home() {
             </MDBCol>
           </MDBRow>
         </MDBContainer>
-        {/* <MDBContainer className="mt-4">
+        <MDBContainer className="mt-4">
+            <HorizontalBarChart item={financialSummary}/>
           <MDBRow className=" d-flex">
             {infoPages.map((item, i) => {
               return (
@@ -66,11 +67,8 @@ export default function Home() {
               );
             })}
           </MDBRow>
-        </MDBContainer> */}
-        <HorizontalBarChart/>
         <AreaChart item={orders} />
-        
-        <AreaChart item={orders} /> 
+        </MDBContainer>
       </>
     </div>
   );

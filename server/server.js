@@ -10,20 +10,18 @@ const passport = require('passport');
 require('./config/passport')(passport);
 
 const productRouter = require('./routes/product-router')
-const categoryRouter = require('./routes/category-router')
 const infoPageRouter = require('./routes/infoPages-router')
-const classesRouter = require('./routes/classes-router')
 const ordersRouter = require('./routes/orders-router')
+const financialSummaryRouter = require('./routes/financialSummaryModel-router')
 
 app.use(passport.initialize())
 app.use(cors());
 app.use(express.json({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/category',categoryRouter)
 app.use('/products',productRouter)
+app.use('/financialSummary',financialSummaryRouter)
 app.use('/infoPages',infoPageRouter)
-app.use('/classes',classesRouter)
 app.use('/orders',ordersRouter)
 
 
