@@ -25,19 +25,19 @@ export default function Home() {
       <>
         <MDBContainer fluid>
           <MDBRow className=" mt-5 mb-5 justify-content-end">
-            <MDBCol className="heightChart col-md-12 col-lg-4 text-end ">
+            <MDBCol className="heightChart col-lg-12 col-xl-4 text-end ">
               <h2>Orders per day</h2>
               <div className="px-0">
                 <BarChart item={orders} />
               </div>
             </MDBCol>
-            <MDBCol className="heightChart col-md-4 text-end col-lg-3 justify-content-end">
+            <MDBCol className="heightChart col-lg-4 text-end col-xl-3 justify-content-end">
             <h2>Instruments quantity </h2>
               <div className="DoughnutChart">
                 <DoughnutChart item={products} />
               </div>
             </MDBCol>
-            <MDBCol className="heightChart col-md-4 text-end col-lg-3 justify-content-end mx-md-5">
+            <MDBCol className="heightChart col-lg-4 text-end col-xl-3 justify-content-end mx-md-5">
             <h2>Instruments sale amount </h2>
               <div className="DoughnutChart">
                 <PieChart item={products} info={infoPages} />
