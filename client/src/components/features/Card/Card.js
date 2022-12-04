@@ -10,8 +10,8 @@ import {
 
 export default function App({img,sold,name}) {
   return (
-    <MDBCard>
-      <MDBCardImage src={img} position='top' alt='...' />
+    <MDBCard >
+      <MDBCardImage className="imgCards" src={img} position='top' alt='...' />
       <MDBCardBody>
         <MDBCardTitle><b><i>{name}</i></b></MDBCardTitle>
         <MDBCardText className=' text-center'>

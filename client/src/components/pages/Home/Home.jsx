@@ -71,14 +71,14 @@ export default function Home() {
           <MDBRow className=" d-flex mb-5 pt-5">
             {infoPages.map((item, i) => {
               return (
-                <MDBCol key={i} xl="2" lg="3" md="6" sm="6">
+                <MDBCol className="mt-3" size={4}  key={i} xl="2" lg="3" md="6" sm="6">
                   <Card {...item} />
                 </MDBCol>
               );
             })}
           </MDBRow>
           <AreaChart className="mt-5" item={users} />
-          <h2 className="mt-5">Orders coming soon</h2>
+          <h2 className="mt-5">Delivery Orders Track</h2>
           <Table item={ordersComing} />
         </MDBContainer>
         <Footer />
