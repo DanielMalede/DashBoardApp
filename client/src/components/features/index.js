@@ -1,5 +1,4 @@
 import PieChart from "./PieChart/PieChart";
-import LineChart from "./LineChart/LineChart";
 import AreaChart from "./AreaChart/AreaChart";
 import DoughnutChart from "./DoughnutChart/DoughnutChart";
 import BarChart from "./BarChart/BarChart";
@@ -8,10 +7,9 @@ import NavBar from "./NavBar/NavBar";
 import CardSum from "./cardSum/CardSum";
 import BigCard from "./BigCard/BigCard";
 import HorizontalBarChart from "./HorizontalBarChart/HorizontalBarChart";
-
+import Footer from './footer/Footer'
 export {
     PieChart,
-    LineChart,
     AreaChart,
     BarChart,
     DoughnutChart,
@@ -19,5 +17,6 @@ export {
     NavBar,
     CardSum,
     BigCard,
-    HorizontalBarChart
+    HorizontalBarChart,
+    Footer
 }

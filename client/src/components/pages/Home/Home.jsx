@@ -3,7 +3,6 @@ import React from "react";
 import { MDBContainer, MDBRow, MDBCol } from "mdb-react-ui-kit";
 import {
   PieChart,
-  LineChart,
   AreaChart,
   BarChart,
   DoughnutChart,
@@ -11,18 +10,18 @@ import {
   NavBar,
   CardSum,
   BigCard,
-  HorizontalBarChart
+  HorizontalBarChart,
+  Footer
 } from "../../features/index";
 import { useDataContext } from "../../../context/dataContext";
 
-const cardTitle = ["Orders", "Products", "Info Pages", "Classes", "Category"];
 export default function Home() {
-  const { infoPages, products, orders ,financialSummary} = useDataContext();
+  const { infoPages, products, orders, financialSummary, users } =
+    useDataContext();
   return (
     <div>
       <NavBar />
       <>
-
         <MDBContainer fluid>
           <MDBRow className=" mt-5 mb-5 justify-content-end">
             <MDBCol className="heightChart col-md-4 text-end ">
@@ -37,28 +36,35 @@ export default function Home() {
             </MDBCol>
             <MDBCol className="heightChart col-md-3 text-end justify-content-end mx-md-5">
               <div className="DoughnutChart">
-                <PieChart item={products} info={infoPages}/>
+                <PieChart item={products} info={infoPages} />
               </div>
             </MDBCol>
           </MDBRow>
         </MDBContainer>
-        <MDBContainer >
-          <MDBRow className="align-self-center justify-content-center d-flex" size="12" xl="3" lg="4" md="6" sm="12">
+        <MDBContainer>
+          <MDBRow
+            className="align-self-center justify-content-center d-flex"
+            size="12"
+            xl="3"
+            lg="4"
+            md="6"
+            sm="12"
+          >
             <MDBCol>
               <MDBRow>
                 <MDBCol className="mt-4 " size="12">
-                  <CardSum item={products}/>
+                  <CardSum item={products} />
                 </MDBCol>
               </MDBRow>
             </MDBCol>
             <MDBCol className=" align-self-center justify-content-center d-flex">
-              <BigCard item={products} className="w-100"/>
+              <BigCard item={products} className="w-100" />
             </MDBCol>
           </MDBRow>
         </MDBContainer>
-        <MDBContainer className="mt-4">
-            <HorizontalBarChart item={financialSummary}/>
-          <MDBRow className=" d-flex">
+        <MDBContainer className="mt-5">
+          <HorizontalBarChart className="pt-5" item={financialSummary} />
+          <MDBRow className=" d-flex mb-5 pt-5">
             {infoPages.map((item, i) => {
               return (
                 <MDBCol key={i} xl="2" lg="3" md="6" sm="6">
@@ -67,8 +73,9 @@ export default function Home() {
               );
             })}
           </MDBRow>
-        <AreaChart item={orders} />
+          <AreaChart className="mt-5" item={users} />
         </MDBContainer>
+        <Footer/>
       </>
     </div>
   );

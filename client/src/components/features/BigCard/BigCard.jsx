@@ -4,7 +4,6 @@ import {
   MDBCardBody,
   MDBCardTitle,
   MDBCardText,
-  MDBBtn
 } from 'mdb-react-ui-kit';
 let ToolName = ["Guitars:","Piano:","Drums:","Bass guitar:","Violin:","Saksofon:"]
 export default function BigCard({item}) {

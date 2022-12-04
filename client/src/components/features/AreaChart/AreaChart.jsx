@@ -11,8 +11,6 @@ import {
   Legend,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-import {faker} from '@faker-js/faker';
-import {useDataContext} from '../../../context/dataContext'
 
 
 ChartJS.register(
@@ -35,7 +33,7 @@ export default function AreaChart({item}) {
       },
       title: {
         display: true,
-        text: 'Orders',
+        text: 'New Registers Users',
       },
     },
   };
@@ -47,8 +45,8 @@ export default function AreaChart({item}) {
     datasets: [
       {
         fill: true,
-        label: 'Orders Per Mounts',
-        data: [...item.map(item=>item.order_per_day)],
+        label: 'Added Users',
+        data: [...item.map(item=>item.added_users)],
         borderColor: 'rgb(53, 162, 235)',
         backgroundColor: 'rgba(53, 162, 235, 0.5)',
       },

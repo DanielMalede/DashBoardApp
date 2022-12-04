@@ -2,11 +2,9 @@ import React from 'react';
 import {
   MDBCard,
   MDBCardBody,
-  MDBCardTitle,
   MDBCardText,
   MDBCardHeader,
   MDBCardFooter,
-  MDBBtn
 } from 'mdb-react-ui-kit';
 
 export default function CardSum({item}) {
