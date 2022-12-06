@@ -15,11 +15,6 @@ const data = [
 ];
 
 function Map() {
-//   const { countries, setCountries } = useContext(countriesContext)
-//   console.log(countries);
-
-  // const data = countries.map((item)=>item.countryName);
-
   return (
     <div className="geo-chart">
       <Chart chartType="GeoChart"  height="50vh" data={data} />
