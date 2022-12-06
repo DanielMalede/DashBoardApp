@@ -9,7 +9,7 @@ export default function Circle() {
         value={85}
         circleRatio={0.75}
         maxValue={100}
-        text={`85%`}
+        text={`84%`}
         styles={{
           trail: {
             transform: "rotate(-135deg)",
