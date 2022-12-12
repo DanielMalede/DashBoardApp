@@ -9,8 +9,7 @@ const getProduct = async (req, res) => {
       return res.json({ success: false, message: "no data" });
     }
 
-      return res.status(200).json({ success: true, message: result });
-    
+    return res.status(200).json({ success: true, message: result });
   });
 };
 
@@ -53,5 +52,5 @@ module.exports = {
   getProductsById,
   createProduct,
   updateProduct,
-  deleteProduct
+  deleteProduct,
 };
