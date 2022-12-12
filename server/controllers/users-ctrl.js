@@ -1,4 +1,4 @@
-const usersModel = require('../model/users-model')
+const usersModel = require("../model/users-model");
 const getUsers = async (req, res) => {
   await usersModel.find({}).then((result, err) => {
     if (err) {
@@ -12,14 +12,11 @@ const getUsers = async (req, res) => {
 };
 
 const createUser = async (req, res) => {
-    await usersModel
-      .insertMany(req.body.data)
-      .then(() =>
-        res.status(200).json({ success: true, message: "user added" })
-      )
-      .catch((error) => res.status(400).json({ success: false, error }));
-  };
-  
+  await usersModel
+    .insertMany(req.body.data)
+    .then(() => res.status(200).json({ success: true, message: "user added" }))
+    .catch((error) => res.status(400).json({ success: false, error }));
+};
 
 module.exports = {
   getUsers,
