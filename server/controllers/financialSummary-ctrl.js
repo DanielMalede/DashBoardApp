@@ -21,7 +21,10 @@ const geFinancialSummaryById = async (req, res) => {
       if (financialSummaryId) {
         return res.status(200).json({ success: true, financialSummaryId });
       }
-      return res.json({ success: false, message: "financial Summary not found" });
+      return res.json({
+        success: false,
+        message: "financial Summary not found",
+      });
     })
     .catch((error) => res.status(400).json({ success: false, error }));
 };
@@ -30,7 +33,9 @@ const createFinancialSummary = async (req, res) => {
   await financialSummaryModel
     .insertMany(req.body.data)
     .then(() =>
-      res.status(200).json({ success: true, message: "financial Summary added" })
+      res
+        .status(200)
+        .json({ success: true, message: "financial Summary added" })
     )
     .catch((error) => res.status(400).json({ success: false, error }));
 };
@@ -53,5 +58,5 @@ module.exports = {
   geFinancialSummaryById,
   createFinancialSummary,
   updateFinancialSummary,
-  deleteFinancialSummary
+  deleteFinancialSummary,
 };
